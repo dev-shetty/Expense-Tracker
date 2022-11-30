@@ -1,6 +1,6 @@
 function ExpenseInput() {
   return (
-    <div className="container flex flex-col gap-4 py-4">
+    <div className="container flex flex-col gap-4 pt-2">
       <div className="form-element">
         <label htmlFor="reason">Source</label>
         <input type="text" name="reason" id="reason" />

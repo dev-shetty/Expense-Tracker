@@ -5,7 +5,8 @@ import PrimaryBtn from "../components/UIComponents/Buttons/PrimaryBtn"
 
 function HomePage() {
   return (
-    <div className="container flex flex-col my-4 md:w-3/4 lg:w-2/4 md:mx-auto">
+    <div className="container flex flex-col">
+      <h1 className="text-center mb-2 font-bold text-2xl">Expense Tracker</h1>
       <ExpenseInput />
       <Balance />
       <History />
