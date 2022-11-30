@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-element {
+  @apply flex justify-between items-center px-3 md:w-3/4 xl:w-2/4 sm:mx-auto;
+}
+
+label {
+  @apply text-lg;
+}
+
+input {
+  @apply border-2 px-2 py-0.5 text-xl w-2/4 md:w-3/4;
+}
+
+input:focus {
+  outline: none;
+}
