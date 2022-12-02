@@ -6,7 +6,6 @@ function History() {
       <SingleHistory />
       <SingleHistory />
       <SingleHistory />
-      <SingleHistory />
     </div>
   )
 }

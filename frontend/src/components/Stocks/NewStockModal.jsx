@@ -2,12 +2,12 @@ import { GrAdd } from "react-icons/gr"
 
 function NewStockModal({ setModal }) {
   return (
-    <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-gray-300 p-4 mx-2 w-3/4 flex flex-col gap-4 rounded-lg">
+    <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-gray-300 p-4 mx-2 w-3/4 flex flex-col gap-4 rounded-lg md:w-2/4">
       <div className="flex flex-col items-center gap-2">
         <label htmlFor="companyName">Company</label>
         <input type="text" name="companyName" id="companyName" />
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 justify-center">
         <div className="flex flex-col items-center">
           <label htmlFor="shares">Shares</label>
           <input type="text" name="shares" id="shares" />
