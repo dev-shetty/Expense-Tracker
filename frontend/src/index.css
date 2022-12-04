@@ -20,6 +20,11 @@ input {
   @apply border-2 px-2 py-0.5 text-xl w-2/4 md:w-3/4;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
 input:focus {
   outline: none;
 }

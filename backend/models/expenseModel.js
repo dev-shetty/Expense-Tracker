@@ -9,6 +9,9 @@ const expenseSchema = mongoose.Schema(
     expense: {
       type: Number,
     },
+    earning: {
+      type: Number,
+    },
     balance: {
       type: Number,
     },
