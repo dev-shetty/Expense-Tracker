@@ -36,7 +36,7 @@ const setExpense = asyncHandler(async (req, res) => {
 })
 
 // @desc get balance and previous source of earning / expense
-// @router GET /api/expense/balance
+// @router GET /api/expense
 // @access Public
 
 const getBalance = asyncHandler(async (req, res) => {

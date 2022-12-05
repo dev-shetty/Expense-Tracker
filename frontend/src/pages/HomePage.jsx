@@ -36,7 +36,7 @@ function HomePage() {
 
   useEffect(() => {
     const getBalance = async () => {
-      const response = await axios.get("/api/expense/balance")
+      const response = await axios.get("/api/expense")
       setBalance(response.data.balance)
       setHistory(response.data.history)
     }
