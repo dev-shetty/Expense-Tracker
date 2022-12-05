@@ -14,7 +14,7 @@ function ExpenseInput({
           type="text"
           name="reason"
           id="reason"
-          defaultValue={source}
+          value={source}
           onChange={(event) => setSource(event.target.value)}
         />
       </div>
@@ -24,7 +24,7 @@ function ExpenseInput({
           type="number"
           name="expense"
           id="expense"
-          defaultValue={expense}
+          value={expense}
           onChange={(event) => setExpense(parseFloat(event.target.value))}
         />
       </div>
@@ -34,7 +34,7 @@ function ExpenseInput({
           type="number"
           name="earning"
           id="earning"
-          defaultValue={earning}
+          value={earning}
           onChange={(event) => setEarning(parseFloat(event.target.value))}
         />
       </div>

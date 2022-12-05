@@ -15,6 +15,9 @@ const expenseSchema = mongoose.Schema(
     balance: {
       type: Number,
     },
+    history: {
+      type: Array,
+    },
   },
   {
     timestamps: true,
