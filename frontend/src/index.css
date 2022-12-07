@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+body {
+  @apply bg-gray-100;
+}
+
 .form-element {
   @apply flex justify-between items-center px-3 md:w-3/4 xl:w-2/4 sm:mx-auto;
 }
@@ -17,7 +21,7 @@ label {
 }
 
 input {
-  @apply border-2 px-2 py-0.5 text-xl w-2/4 md:w-3/4;
+  @apply border-2 px-2 py-0.5 text-xl w-2/4 md:w-3/4 rounded-xl shadow-inner shadow-gray-400;
 }
 
 input::-webkit-outer-spin-button,
