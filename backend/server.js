@@ -10,6 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use("/api/expense", require("./routes/expenseRoutes"))
+app.use("/api/stocks", require("./routes/stockRoutes"))
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`)

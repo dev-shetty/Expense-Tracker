@@ -17,6 +17,10 @@ function HomePage() {
   // TODO: To make the api request here only since the current one is one step behind
 
   const onClick = async () => {
+    if (!expense && !earning) {
+      console.log("Enter valid expense or earning")
+      return
+    }
     const data = {
       source,
       expense,

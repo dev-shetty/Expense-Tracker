@@ -45,7 +45,13 @@ const getBalance = asyncHandler(async (req, res) => {
   res.status(200).json({ balance: balance.balance, history })
 })
 
+const getAllHistory = asyncHandler(async (req, res) => {
+  const history = await Expense.find().sort({ $natural: -1 })
+  res.status(200).json({ history })
+})
+
 module.exports = {
   setExpense,
   getBalance,
+  getAllHistory,
 }
