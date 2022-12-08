@@ -9,7 +9,6 @@ function History({ history }) {
   const getHistory = async () => {
     try {
       const response = await axios.get("/api/expense/history")
-      console.log(response.data.history)
       setAllHistory(response.data.history)
       if (response.data) setModal(true)
     } catch (error) {
@@ -24,7 +23,7 @@ function History({ history }) {
   return (
     <>
       <div
-        className="border-2 px-4 py-4 mx-2 rounded-lg cursor-pointer bg-gray-200 shadow-inner shadow-gray-400"
+        className=" px-4 py-4 mx-2 rounded-lg cursor-pointer "
         onClick={getHistory}
       >
         {historyElement}

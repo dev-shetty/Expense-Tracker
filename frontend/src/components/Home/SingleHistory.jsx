@@ -1,7 +1,7 @@
 function SingleHistory({ singleHistory }) {
   const { expense, earning, source, balance } = singleHistory
   return (
-    <div className="flex justify-between items-center px-4 border-b-2 pb-2 last:border-b-0">
+    <div className="flex justify-between items-center px-4 border-2 pb-2 my-2 rounded-lg bg-gray-200 shadow-inner shadow-gray-400">
       <div className="px-4 py-2">
         <p>{source}</p>
         <div className="flex items-center">

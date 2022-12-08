@@ -45,6 +45,9 @@ const getBalance = asyncHandler(async (req, res) => {
   res.status(200).json({ balance: balance.balance, history })
 })
 
+// @desc get history of all transactions till last one
+// @router GET /api/expense/history
+// @access Public
 const getAllHistory = asyncHandler(async (req, res) => {
   const history = await Expense.find().sort({ $natural: -1 })
   res.status(200).json({ history })

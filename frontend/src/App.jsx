@@ -5,7 +5,7 @@ import Navbar from "./components/UIComponents/Navbar/Navbar"
 
 function App() {
   return (
-    <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 container md:w-3/4 lg:w-2/4 md:mx-auto bg-gray-300 rounded-xl shadow-slate-500 shadow-lg">
+    <div className="md:absolute md:top-2/4 md:left-2/4 md:-translate-x-2/4 md:-translate-y-2/4 container md:w-3/4 lg:w-2/4 md:mx-auto bg-gray-300 md:rounded-xl shadow-slate-500 shadow-lg">
       <Router>
         <Navbar />
         <Routes>

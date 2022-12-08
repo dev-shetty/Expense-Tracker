@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
-router.post("/").get("/")
+const { addStocks, getStocks } = require("../controllers/stockController")
+
+router.post("/", addStocks).get("/", getStocks)
 
 module.exports = router

@@ -3,25 +3,49 @@ import { GrAdd } from "react-icons/gr"
 import Holdings from "../components/Stocks/Holdings"
 import NewStockModal from "../components/Stocks/NewStockModal"
 import Stock from "../components/Stocks/Stock"
-import Wrapper from "../components/UIComponents/Wrappers/Wrapper"
 import FloatingBtn from "../components/UIComponents/Buttons/FloatingBtn"
+import { useEffect } from "react"
+import axios from "axios"
 
 function StocksPage() {
   const [modal, setModal] = useState(false)
+  const [holding, setHolding] = useState(0)
+  const [allStocks, setAllStocks] = useState([])
+  const initialState = {
+    companyName: "",
+    shares: 0,
+    amount: 0,
+  }
+  const [data, setData] = useState(initialState)
+
+  useEffect(() => {
+    const getHoldings = async () => {
+      const response = await axios.get("/api/stocks/")
+      setHolding(response.data.totalHoldings.totalHolding)
+      setAllStocks(response.data.allStocks)
+    }
+    getHoldings()
+  }, [])
   return (
     <div className="container px-3">
       <h1 className="text-center mt-2 font-bold text-2xl">Stock Holdings</h1>
-      <Holdings />
-      <div className="flex flex-col gap-2">
-        <Wrapper setModal={setModal}>
-          <Stock />
-          <Stock />
-          <Stock />
-          <Stock />
-        </Wrapper>
+      <Holdings holding={holding} />
+      <div className="flex flex-col gap-2 py-4">
+        <div>
+          {allStocks.map((item) => (
+            <Stock key={item._id} stock={item} setModal={setModal} />
+          ))}
+        </div>
       </div>
       <FloatingBtn text={<GrAdd />} onClick={() => setModal(true)} />
-      {modal && <NewStockModal setModal={setModal} />}
+      {modal && (
+        <NewStockModal
+          setModal={setModal}
+          setData={setData}
+          data={data}
+          initialState={initialState}
+        />
+      )}
     </div>
   )
 }

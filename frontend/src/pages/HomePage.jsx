@@ -30,7 +30,7 @@ function HomePage() {
     setEarning(0)
     setExpense(0)
     try {
-      const response = await axios.post("/api/expense", data)
+      const response = await axios.post("/api/expense/", data)
       setBalance(response.data.balance)
       setHistory(response.data.history)
     } catch (error) {
@@ -40,7 +40,7 @@ function HomePage() {
 
   useEffect(() => {
     const getBalance = async () => {
-      const response = await axios.get("/api/expense")
+      const response = await axios.get("/api/expense/")
       setBalance(response.data.balance)
       setHistory(response.data.history)
     }
