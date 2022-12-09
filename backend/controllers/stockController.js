@@ -1,3 +1,4 @@
+const { response } = require("express")
 const asyncHandler = require("express-async-handler")
 const Stocks = require("../models/stockModel")
 
@@ -25,9 +26,12 @@ const addStocks = asyncHandler(async (req, res) => {
   })
 
   if (newStock) {
+    const allStocks = await Stocks.find().sort({ $natural: -1 })
     res.status(200).json({
-      id: res.id,
+      id: newStock.id,
       message: `${shares} shares of ${companyName} worth Rs.${amount} added`,
+      allStocks,
+      totalHolding: newStock.totalHolding,
     })
   } else {
     res.status(400)

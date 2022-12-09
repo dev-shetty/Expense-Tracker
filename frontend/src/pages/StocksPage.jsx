@@ -42,6 +42,8 @@ function StocksPage() {
         <NewStockModal
           setModal={setModal}
           setData={setData}
+          setAllStocks={setAllStocks}
+          setHolding={setHolding}
           data={data}
           initialState={initialState}
         />

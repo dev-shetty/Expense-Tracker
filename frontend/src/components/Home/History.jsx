@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { FaHistory } from "react-icons/fa"
 import SingleHistory from "./SingleHistory"
 
 function History({ history }) {
@@ -23,9 +24,12 @@ function History({ history }) {
   return (
     <>
       <div
-        className=" px-4 py-4 mx-2 rounded-lg cursor-pointer "
+        className="absolute right-2 scale-125 cursor-pointer"
         onClick={getHistory}
       >
+        <FaHistory />
+      </div>
+      <div className=" px-4 py-4 mx-2 rounded-lg cursor-pointer ">
         {historyElement}
       </div>
       {modal && (

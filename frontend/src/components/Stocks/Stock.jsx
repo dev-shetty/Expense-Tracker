@@ -5,7 +5,7 @@ function Stock({ setModal, stock }) {
       <div>
         <p className="text-lg font-semibold">{stock.companyName}</p>
       </div>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center justify-between w-1/4">
         <div className="flex flex-col gap-1 items-center">
           <p>Shares</p>
           <p className="text-lg font-semibold">{stock.shares}</p>
@@ -13,11 +13,6 @@ function Stock({ setModal, stock }) {
         <div className="flex flex-col gap-1 items-center">
           <p>Holding</p>
           <p className="text-lg font-semibold">&#8377; {stock.amount}</p>
-        </div>
-        <div className="rounded-lg flex justify-center items-center">
-          <p className="cursor-pointer">
-            <FaEdit onClick={() => setModal(true)} />
-          </p>
         </div>
       </div>
     </div>
