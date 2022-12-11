@@ -5,7 +5,7 @@ function Stock({ setModal, stock }) {
       <div>
         <p className="text-lg font-semibold">{stock.companyName}</p>
       </div>
-      <div className="flex gap-4 items-center justify-between w-1/4">
+      <div className="flex gap-4 items-center justify-between md:w-1/4">
         <div className="flex flex-col gap-1 items-center">
           <p>Shares</p>
           <p className="text-lg font-semibold">{stock.shares}</p>
