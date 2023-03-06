@@ -5,6 +5,8 @@ import Balance from "../components/Home/Balance"
 import ExpenseInput from "../components/Home/ExpenseInput"
 import History from "../components/Home/History"
 import PrimaryBtn from "../components/UIComponents/Buttons/PrimaryBtn"
+import Navbar from "../components/UIComponents/Navbar/Navbar"
+import { useNavigate } from "react-router-dom"
 
 function HomePage() {
   const [source, setSource] = useState("")
@@ -14,7 +16,11 @@ function HomePage() {
   const [balance, setBalance] = useState(0)
   const [history, setHistory] = useState([])
 
-  // TODO: To make the api request here only since the current one is one step behind
+  const [token, setToken] = useState(
+    JSON.parse(localStorage.getItem("expense-tracker-user"))
+  )
+
+  const navigate = useNavigate()
 
   const onClick = async () => {
     if (!expense && !earning) {
@@ -48,21 +54,31 @@ function HomePage() {
     getBalance()
   }, [])
 
+  useEffect(() => {
+    console.log(token)
+    if (!token) {
+      navigate("/")
+    }
+  }, [token])
+
   return (
-    <div className="container flex flex-col">
-      <h1 className="text-center mb-2 font-bold text-2xl">Expense Tracker</h1>
-      <ExpenseInput
-        source={source}
-        setSource={setSource}
-        expense={expense}
-        setExpense={setExpense}
-        earning={earning}
-        setEarning={setEarning}
-      />
-      <Balance balance={balance} />
-      <History history={history} />
-      <PrimaryBtn text="Update" onClick={onClick} />
-    </div>
+    <>
+      <Navbar />
+      <div className="container flex flex-col">
+        <h1 className="text-center mb-2 font-bold text-2xl">Expense Tracker</h1>
+        <ExpenseInput
+          source={source}
+          setSource={setSource}
+          expense={expense}
+          setExpense={setExpense}
+          earning={earning}
+          setEarning={setEarning}
+        />
+        <Balance balance={balance} />
+        <History history={history} />
+        <PrimaryBtn text="Update" onClick={onClick} />
+      </div>
+    </>
   )
 }
 
